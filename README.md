@@ -8,5 +8,5 @@
 ## Installation
 
 ```
-Install-Package Soenneker.Exceptions.Suite
+dotnet add package Soenneker.Exceptions.Suite
 ```
