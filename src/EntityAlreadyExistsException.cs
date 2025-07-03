@@ -2,7 +2,7 @@
 
 namespace Soenneker.Exceptions.Suite;
 
-public class EntityAlreadyExistsException : Exception
+public sealed class EntityAlreadyExistsException : Exception
 {
     public EntityAlreadyExistsException()
     {

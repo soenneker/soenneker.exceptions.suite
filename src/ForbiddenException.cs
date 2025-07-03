@@ -5,7 +5,7 @@ namespace Soenneker.Exceptions.Suite;
 /// <summary>
 /// Will return a 403
 /// </summary>
-public class ForbiddenException : Exception
+public sealed class ForbiddenException : Exception
 {
     public ForbiddenException()
     {

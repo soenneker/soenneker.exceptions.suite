@@ -2,7 +2,7 @@
 
 namespace Soenneker.Exceptions.Suite;
 
-public class UnauthorizedException : Exception
+public sealed class UnauthorizedException : Exception
 {
     public UnauthorizedException()
     {

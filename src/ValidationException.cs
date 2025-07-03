@@ -2,7 +2,7 @@
 
 namespace Soenneker.Exceptions.Suite;
 
-public class ValidationException : Exception
+public sealed class ValidationException : Exception
 {
     public ValidationException()
     {

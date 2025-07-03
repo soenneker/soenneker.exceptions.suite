@@ -2,7 +2,7 @@
 
 namespace Soenneker.Exceptions.Suite;
 
-public class EntityNotFoundException : Exception
+public sealed class EntityNotFoundException : Exception
 {
     public override string Message { get; }
 
