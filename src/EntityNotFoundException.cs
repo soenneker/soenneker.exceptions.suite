@@ -1,36 +1,41 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace Soenneker.Exceptions.Suite;
 
 public sealed class EntityNotFoundException : Exception
 {
-    public override string Message { get; }
-
     public EntityNotFoundException(string message)
+        : base(message)
     {
-        Message = message;
     }
 
-    public EntityNotFoundException(string message, Exception innerException) : base(message, innerException)
+    public EntityNotFoundException(string message, Exception innerException)
+        : base(message, innerException)
     {
-        Message = message;
     }
 
     /// <summary>
-    /// This is the preferred method, with nameof() for types.
+    /// Preferred ctor (use nameof()).
     /// </summary>
     public EntityNotFoundException(string name, object? key)
+        : base(CreateMessage(name, key))
     {
-        if (key == null)
-            Message = $"Entity \"{name}\" was not found.";
-        else
-            Message = $"Entity \"{name}\" ({key}) was not found.";
     }
 
     /// <summary>
-    /// Not the preferred ctor! This is used when the type is unknown until runtime
+    /// For when the type is only known at runtime.
     /// </summary>
-    public EntityNotFoundException(Type type, object? key) : this(type.ToString(), key)
+    public EntityNotFoundException(Type type, object? key)
+        : this(type.FullName ?? type.Name, key)
     {
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static string CreateMessage(string name, object? key)
+    {
+        return key is null
+            ? $"Entity \"{name}\" was not found."
+            : $"Entity \"{name}\" ({key}) was not found.";
     }
 }
