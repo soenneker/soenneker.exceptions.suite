@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Exceptions.Suite.Tests;
 
-[Collection("Collection")]
-public class EntityAlreadyExistsExceptionTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class EntityAlreadyExistsExceptionTests : HostedUnitTest
 {
-    public EntityAlreadyExistsExceptionTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public EntityAlreadyExistsExceptionTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
