@@ -2,6 +2,9 @@
 
 namespace Soenneker.Exceptions.Suite;
 
+/// <summary>
+/// Represents the validation exception.
+/// </summary>
 public sealed class ValidationException : Exception
 {
     public ValidationException()

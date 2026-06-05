@@ -3,6 +3,9 @@ using System.Runtime.CompilerServices;
 
 namespace Soenneker.Exceptions.Suite;
 
+/// <summary>
+/// Represents the entity not found exception.
+/// </summary>
 public sealed class EntityNotFoundException : Exception
 {
     public EntityNotFoundException(string message)
@@ -15,17 +18,11 @@ public sealed class EntityNotFoundException : Exception
     {
     }
 
-    /// <summary>
-    /// Preferred ctor (use nameof()).
-    /// </summary>
     public EntityNotFoundException(string name, object? key)
         : base(CreateMessage(name, key))
     {
     }
 
-    /// <summary>
-    /// For when the type is only known at runtime.
-    /// </summary>
     public EntityNotFoundException(Type type, object? key)
         : this(type.FullName ?? type.Name, key)
     {

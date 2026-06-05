@@ -2,6 +2,9 @@
 
 namespace Soenneker.Exceptions.Suite;
 
+/// <summary>
+/// Represents the entity already exists exception.
+/// </summary>
 public sealed class EntityAlreadyExistsException : Exception
 {
     public EntityAlreadyExistsException()

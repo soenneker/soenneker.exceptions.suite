@@ -2,6 +2,9 @@
 
 namespace Soenneker.Exceptions.Suite;
 
+/// <summary>
+/// Represents the unauthorized exception.
+/// </summary>
 public sealed class UnauthorizedException : Exception
 {
     public UnauthorizedException()
