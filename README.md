@@ -3,11 +3,20 @@
 [![](https://img.shields.io/nuget/dt/Soenneker.Exceptions.Suite.svg?style=for-the-badge)](https://www.nuget.org/packages/Soenneker.Exceptions.Suite/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.exceptions.suite/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.exceptions.suite/actions/workflows/codeql.yml)
 
-# ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Exceptions.Suite
-### A collection of commonly used exception types
+# Soenneker.Exceptions.Suite
 
-## Installation
+Represents the entity already exists exception.
 
-```
+## Install
+
+```bash
 dotnet add package Soenneker.Exceptions.Suite
 ```
+
+## What you get
+
+- `EntityAlreadyExistsException` — Represents the entity already exists exception.
+- `EntityNotFoundException` — Represents the entity not found exception.
+- `ForbiddenException` — Will return a 403.
+- `UnauthorizedException` — Represents the unauthorized exception.
+- `ValidationException` — Represents the validation exception.
